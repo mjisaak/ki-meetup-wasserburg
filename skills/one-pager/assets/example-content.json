@@ -1,0 +1,74 @@
+{
+  "brand": "KI Meetup",
+  "event_day": "DONNERSTAG",
+  "event_date": "24.09.2026",
+  "eyebrow": "THEMENSCHWERPUNKT",
+  "title": "AGENTIC AI",
+  "subtitle": "KI-Agenten verstehen, Skills wiederverwenden und Reichweite automatisieren.",
+  "hero_image": "hero.jpg",
+  "accent": "#E3FF04",
+  "facts": [
+    "Einlass 18:30 Uhr",
+    "Beginn 19:00 Uhr",
+    "Teilnahme kostenfrei"
+  ],
+  "agenda": [
+    {
+      "time": "18:30",
+      "title": "Doors",
+      "description": "Ankommen, Kaffee holen und erste Gespräche führen."
+    },
+    {
+      "time": "19:00",
+      "title": "Plug & Play für KI-Agenten",
+      "description": "Wie Agent Skills Fähigkeiten als Bausteine wiederverwendbar machen – mit kurzen Live-Demos."
+    },
+    {
+      "time": "19:30",
+      "title": "Autonome KI-Agenten",
+      "description": "Wie sie für Unternehmen und Kunden kontinuierlich Reichweite aufbauen."
+    },
+    {
+      "time": "20:00",
+      "title": "Netzwerken",
+      "description": "Austausch, Catering und Getränke."
+    }
+  ],
+  "speakers": [
+    {
+      "name": "Vorname Nachname",
+      "role": "Rolle, Unternehmen",
+      "image": "speaker-1.jpg"
+    },
+    {
+      "name": "Vorname Nachname",
+      "role": "Rolle, Unternehmen",
+      "image": "speaker-2.jpg"
+    }
+  ],
+  "audience_title": "Für Macher mit KI-Neugier",
+  "audience": [
+    "Praxiswissen statt Theorie",
+    "Für Unternehmen, Entscheider und Neugierige",
+    "Keine Vorkenntnisse erforderlich",
+    "Zeit für Fragen und Networking"
+  ],
+  "venue": {
+    "name": "Veranstaltungsort",
+    "street": "Musterstraße 1",
+    "city": "12345 Musterstadt",
+    "features": [
+      "PARKPLÄTZE",
+      "BARRIEREFREI"
+    ]
+  },
+  "cta": {
+    "title": "Platz sichern",
+    "text": "Die Teilnahme ist kostenfrei, die Plätze sind begrenzt.",
+    "url": "https://example.com/anmeldung",
+    "label": "example.com"
+  },
+  "footer_left": "Veranstaltungsdaten: example.com/event",
+  "footer_right": "Stand: 31. Juli 2026"
+}
+

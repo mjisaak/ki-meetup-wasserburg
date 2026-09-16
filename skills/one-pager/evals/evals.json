@@ -1,0 +1,28 @@
+{
+  "skill_name": "one-pager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Erstelle einen deutschsprachigen A4-One-Pager für ein lokales KI-Meetup mit vier Agenda-Punkten, zwei Speakern, Location und QR-Anmeldung. Nutze eine dunkle Header-Grafik und liefere HTML und PDF.",
+      "expected_output": "Ein einseitiges A4-PDF im festen Hero/Agenda/Speaker/Sidebar-Layout plus portable HTML-Quelle.",
+      "files": [],
+      "expectations": [
+        "Die PDF umfasst genau eine A4-Seite.",
+        "Die Reihenfolge ist Hero, Agenda, Speaker; Zielgruppe, Ort und QR-CTA stehen in der rechten Spalte.",
+        "Die HTML-Datei enthält keine nicht ersetzten Template-Platzhalter.",
+        "Speaker ohne verlässliches Foto erhalten einen abstrakten Personen-Avatar statt einer leeren Bildfläche."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Mach aus den Eventdaten einen professionellen One-Pager: Product Engineering Breakfast, 08.10.2026, drei kurze Talks, drei Speaker, Frühstück inklusive, Anmeldung per URL. Das Branding ist dunkelblau mit korallfarbenem Akzent.",
+      "expected_output": "Ein markenangepasster One-Pager, der trotz drei Speakern das feste Informationsraster und eine lesbare Ein-Seiten-Ausgabe beibehält.",
+      "files": [],
+      "expectations": [
+        "Das Akzentfarbsystem übernimmt die gewünschte Markenfarbe.",
+        "Alle drei Speaker sind sichtbar und lesbar.",
+        "Die PDF umfasst genau eine A4-Seite."
+      ]
+    }
+  ]
+}

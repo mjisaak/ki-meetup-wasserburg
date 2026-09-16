@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{DOCUMENT_TITLE}}</title>
+<style>
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 210mm; height: 297mm; }
+body { font-family: Arial, sans-serif; color: #0a0c00; background: #f6f5f2; }
+.page { position: relative; width: 210mm; height: 297mm; overflow: hidden; background: #f6f5f2; }
+.hero { position: relative; height: 107mm; color: #fff; background: #090909 center/cover no-repeat; background-image: linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.86) 48%,rgba(0,0,0,.2) 100%),url('{{HERO_IMAGE}}'); overflow: hidden; }
+.hero::after { content:""; position:absolute; width:52mm; height:52mm; right:-11mm; top:-19mm; border:0.3mm solid {{ACCENT}}; border-radius:50%; opacity:.55; }
+.brand { position:absolute; left:14mm; top:12mm; font-size:11mm; line-height:1; font-weight:700; letter-spacing:-.6mm; }
+.brand-mark { display:inline-block; margin-right:2mm; padding:1.7mm 2mm 1.2mm; color:#050505; background:#fff; letter-spacing:-.5mm; }
+.date { position:absolute; right:14mm; top:12mm; min-width:34mm; padding:4mm 5mm; color:#070900; background:{{ACCENT}}; border-radius:3mm; text-align:center; }
+.date-day { font-family:"Arial Narrow",Arial,sans-serif; font-size:3.1mm; font-weight:700; letter-spacing:.25mm; }
+.date-value { margin-top:1mm; font-size:5.3mm; font-weight:800; }
+.hero-copy { position:absolute; left:14mm; right:64mm; bottom:14mm; }
+.eyebrow { color:{{ACCENT}}; font-size:3mm; font-weight:800; letter-spacing:.8mm; }
+h1 { margin:3mm 0 2mm; font-size:13.2mm; line-height:.96; letter-spacing:-.55mm; }
+.subtitle { max-width:117mm; font-size:5mm; line-height:1.25; font-weight:500; }
+.facts { display:flex; gap:2.2mm; margin-top:5mm; }
+.fact { padding:2.1mm 3.2mm; border:.35mm solid #7c7c7c; border-radius:8mm; font-size:3mm; font-weight:700; white-space:nowrap; }
+.content { display:grid; grid-template-columns:116mm 57mm; gap:9mm; padding:10.5mm 14mm 0; }
+.section-title { display:flex; align-items:center; gap:2.7mm; margin:0 0 4mm; font-family:"Arial Narrow",Arial,sans-serif; font-size:3.2mm; font-weight:800; letter-spacing:.55mm; }
+.section-title::before { content:""; width:8mm; height:1.2mm; background:{{ACCENT}}; }
+.agenda { border-top:.35mm solid #141600; }
+.agenda-item { display:grid; grid-template-columns:18mm 1fr; column-gap:4mm; min-height:15mm; padding:4mm 0 3.2mm; border-bottom:.3mm solid #d9d9d2; }
+.agenda-time { font-size:4.2mm; font-weight:800; }
+.agenda-title { font-size:3.8mm; line-height:1.15; font-weight:800; }
+.agenda-description { margin-top:1mm; color:#66675f; font-size:3mm; line-height:1.28; }
+.speakers-title { margin-top:6mm; }
+.speakers { display:grid; grid-template-columns:repeat({{SPEAKER_COLUMNS}},1fr); gap:4mm; }
+.speaker { display:flex; align-items:center; min-height:24mm; padding:3mm; background:#fff; border:.35mm solid #d9d9d2; border-radius:3mm; overflow:hidden; }
+.speaker img { flex:none; width:18mm; height:18mm; margin-right:3mm; border-radius:50%; object-fit:cover; background:#e8e8e3; }
+.speaker-name { font-size:3.45mm; line-height:1.12; font-weight:800; }
+.speaker-role { margin-top:1.5mm; color:#66675f; font-size:2.7mm; line-height:1.2; }
+.side { position:relative; min-height:175mm; }
+.card { border-radius:3mm; }
+.audience { padding:6mm 5mm; color:#fff; background:#0a0c00; }
+.card-title { margin:0 0 4mm; font-size:5mm; line-height:1.02; font-weight:800; }
+.audience-item { position:relative; margin:0 0 3.6mm; padding-left:5.5mm; font-size:3.15mm; line-height:1.25; }
+.audience-item:last-child { margin-bottom:0; }
+.audience-item::before { content:""; position:absolute; left:0; top:.6mm; width:3mm; height:3mm; border-radius:50%; background:{{ACCENT}}; }
+.venue { margin-top:4mm; padding:5.5mm; background:#fff; border:.35mm solid #d9d9d2; }
+.venue-name { margin-bottom:4mm; font-size:4.7mm; line-height:1.05; font-weight:800; }
+.venue-street { font-size:3.1mm; font-weight:700; }
+.venue-city { margin-top:1mm; color:#66675f; font-size:3mm; }
+.features { display:grid; grid-template-columns:repeat(2,1fr); gap:2mm; margin-top:4mm; }
+.feature { display:flex; align-items:center; justify-content:center; min-height:10mm; padding:1.5mm; background:#ecece7; border-radius:2mm; text-align:center; font-family:"Arial Narrow",Arial,sans-serif; font-size:2.4mm; line-height:1.15; font-weight:800; }
+.cta { position:absolute; left:0; right:0; bottom:0; display:grid; grid-template-columns:26mm 1fr; gap:4mm; padding:4mm; background:{{ACCENT}}; }
+.qr { width:26mm; height:26mm; padding:1.5mm; background:#fff; }
+.qr img { width:100%; height:100%; display:block; }
+.cta-title { font-size:4.6mm; line-height:1; font-weight:800; }
+.cta-text { margin-top:3mm; font-size:2.7mm; line-height:1.22; font-weight:600; }
+.cta-label { margin-top:2mm; font-size:2.7mm; font-weight:800; word-break:break-word; }
+.footer { position:absolute; left:14mm; right:14mm; bottom:3mm; display:flex; justify-content:space-between; color:#87877f; font-size:2mm; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="brand">{{BRAND_HTML}}</div>
+    <div class="date"><div class="date-day">{{EVENT_DAY}}</div><div class="date-value">{{EVENT_DATE}}</div></div>
+    <div class="hero-copy">
+      <div class="eyebrow">{{EYEBROW}}</div>
+      <h1>{{TITLE}}</h1>
+      <div class="subtitle">{{SUBTITLE}}</div>
+      <div class="facts">{{FACTS}}</div>
+    </div>
+  </header>
+  <div class="content">
+    <section>
+      <h2 class="section-title">AGENDA</h2>
+      <div class="agenda">{{AGENDA}}</div>
+      <h2 class="section-title speakers-title">SPEAKER</h2>
+      <div class="speakers">{{SPEAKERS}}</div>
+    </section>
+    <aside class="side">
+      <div class="card audience"><h2 class="card-title">{{AUDIENCE_TITLE}}</h2>{{AUDIENCE}}</div>
+      <div class="card venue">
+        <div class="venue-name">{{VENUE_NAME}}</div>
+        <div class="venue-street">{{VENUE_STREET}}</div>
+        <div class="venue-city">{{VENUE_CITY}}</div>
+        <div class="features">{{VENUE_FEATURES}}</div>
+      </div>
+      <div class="card cta">
+        <div class="qr"><img src="{{QR_IMAGE}}" alt="QR-Code"></div>
+        <div><div class="cta-title">{{CTA_TITLE}}</div><div class="cta-text">{{CTA_TEXT}}</div><div class="cta-label">{{CTA_LABEL}}</div></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="footer"><span>{{FOOTER_LEFT}}</span><span>{{FOOTER_RIGHT}}</span></footer>
+</main>
+</body>
+</html>
