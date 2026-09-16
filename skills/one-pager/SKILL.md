@@ -1,9 +1,14 @@
 ---
 name: one-pager
-description: Erstellt professionelle, druckfertige Event-One-Pager im festen A4-Layout mit großer Header-Grafik, Datum, Agenda, Speakern, Zielgruppe, Veranstaltungsort und QR-CTA. Diesen Skill immer verwenden, wenn ein Nutzer einen One-Pager, Event-Flyer, Veranstaltungsübersicht oder eine einseitige PDF-Ankündigung erstellen oder überarbeiten möchte, auch wenn nur von Flyer, Handout oder Event-PDF die Rede ist.
-compatibility: Requires Python 3 with qrcode and Microsoft Edge, Chrome, or another Chromium browser for PDF rendering.
+description: >-
+  Erstellt und überarbeitet einseitige Event-Flyer und
+  Veranstaltungsübersichten als druckfertige A4-PDF im vorgegebenen
+  Layout. Verwenden für One-Pager, Flyer oder Handouts zur
+  Ankündigung einer Veranstaltung.
+compatibility: >-
+  Requires Python 3 with qrcode and a Chromium-based browser
+  (Microsoft Edge or Google Chrome) for PDF rendering.
 ---
-
 # Event One-Pager
 
 Erzeuge einen visuell konsistenten, einseitigen Event-One-Pager. Das Layout basiert auf einem bewährten Informationsfluss: Hero → Agenda → Speaker, flankiert von Zielgruppe → Ort → Anmeldung.
@@ -32,7 +37,7 @@ Lies bei Layoutfragen zuerst `references/layout-spec.md`.
 6. Führe den Renderer aus:
 
 ```powershell
-python "$HOME\.agents\skills\one-pager\scripts\create_one_pager.py" content.json output.pdf
+python "scripts/create_one_pager.py" content.json output.pdf
 ```
 
 7. Prüfe die erzeugte PDF visuell. Achte besonders auf abgeschnittenen Text, überlaufende Agenda-Zeilen, korrekte Speaker-Zuordnung, einen lesbaren QR-Code und genau eine PDF-Seite.
